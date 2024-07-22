@@ -1,70 +1,142 @@
-# Getting Started with Create React App
+# Audiobook Review System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Audiobook Review System is a web application designed for browsing, reviewing, and rating audiobooks. It features a user-friendly interface on the front end built with React, and a robust server-side backend using Node.js, Express, and MongoDB for data management.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Browse Audiobooks**: Users can view a list of audiobooks with essential details like title, author,rating,genre and cover image.
+- **Filtering Capabilities**: Audiobooks can be sorted and filtered based on genre, author, and rating or on all three of them.
+- **Detailed Audiobook Information**: Each audiobook has a dedicated page with detailed information including descriptions and user-generated reviews.
+- **Review Submission**: Users can submit their reviews and rate audiobooks, enhancing the interactive experience.
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Before you begin, ensure you have the following installed:
+- Node.js (https://nodejs.org/)
+- npm or Yarn (https://yarnpkg.com/)
+- MongoDB (https://www.mongodb.com/try/download/community)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Application Architecture
 
-### `npm test`
+### Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Technology Stack**: React (Create React App)
+- **Styling**: TailwindCSS
+- **Routing**: React Router
+- **State Management**: React Hooks
 
-### `npm run build`
+### Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Framework**: Node.js with Express
+- **Database**: MongoDB
+- **ORM/ODM**: Mongoose
+- **API Style**: RESTful
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## API Specifications
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Audiobooks
 
-### `npm run eject`
+#### Get All Audiobooks
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Endpoint**: `GET /api/audiobooks`
+- **Description**: Fetches a list of all audiobooks.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Get Audiobook Details
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Endpoint**: `GET /api/audiobooks/:id`
+- **URL Params**: `id` (Audiobook ID)
+- **Description**: Retrieves detailed information about a specific audiobook.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Add a New Audiobook
 
-## Learn More
+- **Endpoint**: `POST /api/audiobooks/add`
+- **Access Control**: Backend only
+- **Description**: Adds a new audiobook to the database.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Reviews
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Get Reviews for an Audiobook
 
-### Code Splitting
+- **Endpoint**: `GET /api/reviews/:audiobookId`
+- **URL Params**: `audiobookId` (Audiobook ID)
+- **Description**: Fetches all reviews associated with a specific audiobook.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Submit a Review
 
-### Analyzing the Bundle Size
+- **Endpoint**: `POST /api/reviews`
+- **Access Control**: Public
+- **Description**: Allows users to submit reviews for an audiobook.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Deployment Guide
 
-### Making a Progressive Web App
+### Backend Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Ensure all environment prerequisites like Node.js and MongoDB are set up.
+2. Set up necessary environment variables in a `.env` file (e.g., `MONGODB_URL`).
+3. Deploy the application to a cloud provider such as Heroku.
 
-### Advanced Configuration
+### Frontend Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Run `npm run build` to generate a production build.
+2. Deploy the build to a static hosting service like Netlify or Vercel.
 
-### Deployment
+## Maintenance and Security
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Regularly update dependencies to address security vulnerabilities.
+- Implement logging and monitoring to identify and resolve issues promptly.
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Installation
+
+Follow these steps to get your development environment set up:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/audiobook-system.git
+   cd audiobook-system
+   ```
+
+2. **Set up the backend**:
+ - Navigate to the server directory and install dependencies:
+```bash
+cd server
+npm install
+   ```
+ - Create a .env file in the server directory:
+
+ ```text
+MONGODB_URL=your_mongodb_connection_string
+PORT=3001
+ ```
+ - Start the backend server:
+ ```bash
+ npm start
+ ```
+3. **Set up the frontend**:
+ - Open another terminal, navigate to the client directory, and install dependencies:
+ ```bash
+ cd client
+ npm install
+``` 
+ - Start the React development server:
+ ```bash
+ npm start
+```
+ - The React app will run on http://localhost:3000.
+ 
+
+## Usage
+- With both the frontend and backend servers running, open your web browser to http://localhost:3000 to start exploring the Audiobook Review System. You can browse audiobooks, apply filters, view detailed descriptions, and submit reviews.
+
+
+## Contributing
+- Contributions are what make the open source community such a fantastic place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+## Fork the Project
+- Create your Feature Branch (git checkout -b feature/AmazingFeature)
+- Commit your Changes (git commit -m 'Add some AmazingFeature')
+- Push to the Branch (git push origin feature/AmazingFeature)
+- Open a Pull Request
+
+## Contact
+- For any queries, you can reach out to me at rajravi4072@gmail.com.
