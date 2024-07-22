@@ -2,6 +2,10 @@
 
 The Audiobook Review System is a web application designed for browsing, reviewing, and rating audiobooks. It features a user-friendly interface on the front end built with React, and a robust server-side backend using Node.js, Express, and MongoDB for data management.
 
+## Additional Notes
+
+- **Database Connection**: The provided MongoDB connection string in the `.env` file is for demonstration purposes only. If you are deploying this application to production, ensure you replace it with your secure connection string to protect your data.
+  
 ## Features
 
 - **Browse Audiobooks**: Users can view a list of audiobooks with essential details like title, author,rating,genre and cover image.
