@@ -4,7 +4,7 @@ The Audiobook Review System is a web application designed for browsing, reviewin
 
 ## Additional Notes
 
-- **Database Connection**: The provided MongoDB connection string in the `.env` file is for demonstration purposes only. If you are deploying this application to production, ensure you replace it with your secure connection string to protect your data.
+- **Database Connection**: The provided MongoDB connection string in the `.env` file is for demonstration purposes only which has sufficenient data to test the application. If you are deploying this application to production, ensure you replace it with your secure connection string to protect your data.
   
 ## Features
 
