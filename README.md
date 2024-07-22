@@ -96,7 +96,7 @@ Follow these steps to get your development environment set up:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/audiobook-system.git
+   git clone https://github.com/Balerion769/audiobook-system.git
    cd audiobook-system
    ```
 
