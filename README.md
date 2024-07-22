@@ -106,7 +106,7 @@ Follow these steps to get your development environment set up:
 cd server
 npm install
    ```
- - Create a .env file in the server directory:
+ - Create a .env file in the server directory(But for this case I have added .env file already in server directory with my Database link so don't have to do this step):
 
  ```text
 MONGODB_URL=your_mongodb_connection_string
