@@ -11,7 +11,7 @@ function AudiobookDetail() {
   useEffect(() => {
     const fetchAudiobook = async () => {
       try {
-        const result = await axios.get(`http://localhost:3001/api/audiobooks/${id}`);
+        const result = await axios.get(`https://audiobook-system-fullstack.onrender.com/api/audiobooks/${id}`);
         setAudiobook(result.data);
       } catch (error) {
         console.error('Error fetching audiobook:', error);
@@ -20,7 +20,7 @@ function AudiobookDetail() {
 
     const fetchReviews = async () => {
       try {
-        const result = await axios.get(`http://localhost:3001/api/reviews/${id}`);
+        const result = await axios.get(`https://audiobook-system-fullstack.onrender.com/api/reviews/${id}`);
         setReviews(result.data.reviews);
       } catch (error) {
         console.error('Error fetching reviews:', error);
