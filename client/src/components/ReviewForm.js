@@ -16,7 +16,7 @@ function ReviewForm() {
     event.preventDefault();
     try {
       await axios.post(`https://audiobook-system-fullstack.onrender.com/api/reviews/`, { ...review, audiobookId: id });
-      navigate(`https://audio-book-system-full-stack.vercel.app/audiobooks/${id}`); // Redirect back to the audiobook detail page
+      navigate(`/audiobooks/${id}`); // Redirect back to the audiobook detail page
     } catch (error) {
       console.error('Failed to submit review:', error);
     }
